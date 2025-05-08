@@ -52,7 +52,7 @@ class Vehicle {
 }
 
 class Car extends Vehicle {
-   model: string;
+   private model: string;
 
    constructor( model: string, make: string, year: number ) {
       super( make, year )
@@ -76,8 +76,53 @@ function prosessValue( input: number | string ): number | string {
 
 }
 
-const prosess = prosessValue('tahmid rahman')
+const prosess = prosessValue( 'tahmid rahman' )
 // console.log(prosess);
+enum Day {
+   Sunday,
+   Monday,
+   Tuesday,
+   Wednesday,
+   Thursday,
+   Friday,
+   Saturday
+}
+
+function getDayType( day: Day ): string {
+   if ( day === Day.Sunday ) {
+      return 'Weekend'
+   } else {
+      return 'Weekday'
+   }
+
+}
+const test = getDayType( Day.Sunday )
+
+async function squareAfterDelay( num: number ): Promise<number> {
+   return new Promise( async ( resolve, reject ) => {
+      if ( num < 0 ) {
+         reject( new Error( 'rejected' ) )
+      } else {
+
+         setTimeout( async () => {
+            const maltify = await num * num;
+            resolve( maltify )
+         }, 1000 )
+      }
+   } )
+}
+
+const timeOut = async () => {
+   try {
+      const result = await squareAfterDelay(23)
+      console.log( result );
+
+   } catch ( error ) {
+      console.log( 'reject');
+
+   }
+}
+console.log( timeOut() );
 
 
 
