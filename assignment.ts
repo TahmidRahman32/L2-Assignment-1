@@ -3,10 +3,11 @@ function formatString( input: string, toUpper: boolean = true ): string {
    return toUpper ? input.toUpperCase() : input.toLowerCase()
 
 }
-// console.log(formatString('Tahmid',false));
 
 
-// problem 2
+
+
+
 const phone = [
    { name: "iphone", rating: 3 },
    { name: "vivo", rating: 5 },
@@ -25,9 +26,9 @@ function filterByRating( input: Phone[] ): Phone[] {
 }
 
 const filter = filterByRating( phone )
-// console.log( filter );
 
-//problem 3
+
+
 
 
 function concatenateArrays<T>( ...arrays: T[][] ): T[] {
@@ -65,7 +66,8 @@ class Car extends Vehicle {
 }
 const myCar = new Car( 'toyta', 'corolla', 2020 )
 
-// console.log( myCar );
+
+
 
 function prosessValue( input: number | string ): number | string {
    if ( typeof input === 'string' ) {
@@ -98,6 +100,7 @@ function getDayType( day: Day ): string {
 }
 const test = getDayType( Day.Sunday )
 
+
 async function squareAfterDelay( num: number ): Promise<number> {
    return new Promise( async ( resolve, reject ) => {
       if ( num < 0 ) {
@@ -105,24 +108,23 @@ async function squareAfterDelay( num: number ): Promise<number> {
       } else {
 
          setTimeout( async () => {
-            const maltify = await num * num;
-            resolve( maltify )
-         }, 1000 )
+            const mlt = await num * num;
+            resolve( mlt )
+         }, 1000)
       }
    } )
 }
-
-const timeOut = async () => {
+const timeOut = async( input: number ) => {
    try {
-      const result = await squareAfterDelay(23)
-      console.log( result );
+      const result = await squareAfterDelay( input )
+      console.log( result);
 
    } catch ( error ) {
-      console.log( 'reject');
+      console.log('reject');
 
    }
 }
-console.log( timeOut() );
+ timeOut(-6)
 
 
 
