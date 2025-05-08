@@ -5,9 +5,6 @@ function formatString( input: string, toUpper: boolean = true ): string {
 }
 
 
-
-
-
 const phone = [
    { name: "iphone", rating: 3 },
    { name: "vivo", rating: 5 },
@@ -20,12 +17,11 @@ type Phone = {
    rating: number;
 
 };
-
 function filterByRating( input: Phone[] ): Phone[] {
    return input.filter( item => item.rating >= 4 );
 }
 
-const filter = filterByRating( phone )
+// const filter = filterByRating( phone )
 
 
 
@@ -35,7 +31,7 @@ function concatenateArrays<T>( ...arrays: T[][] ): T[] {
    return arrays.flat();
 }
 
-const add = concatenateArrays( [30, 42], [5, 1], [2, 9] )
+// const add = concatenateArrays( [30, 42], [5, 1], [2, 9] )
 
 
 
@@ -64,7 +60,7 @@ class Car extends Vehicle {
       return `Model: ${this.model}`
    }
 }
-const myCar = new Car( 'toyta', 'corolla', 2020 )
+// const myCar = new Car( 'toyota', 'corolla', 2020 )
 
 
 
@@ -78,8 +74,8 @@ function prosessValue( input: number | string ): number | string {
 
 }
 
-const prosess = prosessValue( 'tahmid rahman' )
-// console.log(prosess);
+// const prosess = prosessValue( '' )
+
 enum Day {
    Sunday,
    Monday,
@@ -98,7 +94,7 @@ function getDayType( day: Day ): string {
    }
 
 }
-const test = getDayType( Day.Sunday )
+// const test = getDayType( Day.Sunday )
 
 
 async function squareAfterDelay( num: number ): Promise<number> {
@@ -110,21 +106,21 @@ async function squareAfterDelay( num: number ): Promise<number> {
          setTimeout( async () => {
             const mlt = await num * num;
             resolve( mlt )
-         }, 1000)
+         }, 1000 )
       }
    } )
 }
-const timeOut = async( input: number ) => {
+const timeOut = async ( input: number ) => {
    try {
       const result = await squareAfterDelay( input )
-      console.log( result);
+      console.log( result );
 
    } catch ( error ) {
-      console.log('reject');
+      console.log( 'reject');
 
    }
 }
- timeOut(-6)
+//  timeOut(-6)
 
 
 
